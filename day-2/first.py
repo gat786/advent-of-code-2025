@@ -40,12 +40,11 @@ def is_invalid(number: str):
 
 def is_invalid_second(number: str, check_size: int):
   # my solution, this does not work, outputs very low
-  # chunks = [number[i:i+check_size] for i in range((len(number) // check_size))]
-  # chunks_set = set(chunks)
-  # return len(chunks_set) == 1
+  possible_multiple = math.floor(len(number) / check_size)
+  return number == number[0:0+check_size] * possible_multiple
   # solution found on github
-  mid = len(number) // 2
-  return any(number == number[:l] * (len(number) // l) for l in range(1, mid + 1))
+  # mid = len(number) // 2
+  # return any(number == number[:l] * (len(number) // l) for l in range(1, mid + 1))
 
 def main():
   # it only contains 1 line
