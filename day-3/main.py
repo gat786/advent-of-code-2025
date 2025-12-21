@@ -10,26 +10,36 @@ def read_content(file_name: str = "input"):
   return content
 
 def top_two(num_str: str) -> List:
-  tops = {}
+  previous_items = set()
+  all_combinations = set()
   # top = { "value": -1, "position": -1}
   # second_top = { "value": -1, "position": -1}
 
-  for key, num in enumerate(num_str):
-    num_value = int(num)
-    if num_value > top["value"]:
-      second_top = top
-      top = { "value": num_value, "position": key }
-    elif num_value > second_top["value"]:
-      second_top = { "value": num_value, "position": key }
+  # for key, num in enumerate(num_str):
+  #   num_value = int(num)
+  #   if num_value > top["value"]:
+  #     second_top = top
+  #     top = { "value": num_value, "position": key }
+  #   elif num_value > second_top["value"]:
+  #     second_top = { "value": num_value, "position": key }
 
-  return [top,second_top]
+  for num in num_str:
+    for prev_element in previous_items:
+      combination = int(f"{prev_element}{num}")
+      all_combinations.add(int(combination))
+    previous_items.add(num)
+
+  return all_combinations
 
 def main():
   content = read_content()
-  total_sum = 0
+
+  maxs = []
   for line in content:
-    first, second = top_two(line)
-    print(first,second)
+    combinations = top_two(line)
+    maxs.append(max(combinations))
+
+  print(sum(maxs))
     # big_num = int(f"{first}{second}")
     # total_sum += big_num
 
