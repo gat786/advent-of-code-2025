@@ -1,3 +1,6 @@
+from cProfile import Profile
+from pstats import Stats
+
 with open("input") as f:
     ls = f.read().strip().split("\n")
 
@@ -10,5 +13,11 @@ def joltage(a, to_choose):
     return res
 
 
-for to_choose in (2, 12):
-    print(sum(joltage(list(map(int, l)), to_choose) for l in ls))
+if __name__ == "__main__":
+  with Profile() as profile:
+    for to_choose in (2, 12):
+      print(sum(joltage(list(map(int, l)), to_choose) for l in ls))
+    (
+      Stats(profile)
+      .print_stats()
+    )

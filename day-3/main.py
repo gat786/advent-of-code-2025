@@ -1,4 +1,6 @@
 from typing import List
+from cProfile import Profile
+from pstats import Stats
 
 def read_content(file_name: str = "input"):
   content = []
@@ -58,4 +60,9 @@ def main():
 
 
 if __name__ == "__main__":
-  main()
+  with Profile() as profile:
+    main()
+    (
+      Stats(profile)
+      .print_stats()
+    )

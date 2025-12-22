@@ -59,3 +59,6 @@ Now, the joltages are much larger:
 The total output joltage is now much larger: 987654321111 + 811111111119 + 434234234278 + 888911112111 = 3121910778619.
 
 What is the new total output joltage?
+
+
+Your puzzle answer was 172601598658203.

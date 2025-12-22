@@ -1,0 +1,57 @@
+################## my solution ##########################
+
+172601598658203
+         1033425 function calls in 0.206 seconds
+
+   Random listing order was used
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        4    0.000    0.000    0.000    0.000 <frozen codecs>:322(decode)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/projects/personal/advent-of-code/advent-of-code-2025/day-3/main.py:5(read_content)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:312(__init__)
+        1    0.000    0.000    0.206    0.206 /Users/ganeshtiwari/projects/personal/advent-of-code/advent-of-code-2025/day-3/main.py:41(main)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:263(__init__)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:107(__init__)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/cProfile.py:53(create_stats)
+   214000    0.015    0.000    0.015    0.000 {method 'append' of 'list' objects}
+    17800    0.002    0.000    0.002    0.000 {method 'join' of 'str' objects}
+   195800    0.016    0.000    0.016    0.000 {method 'index' of 'str' objects}
+      200    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+   409401    0.020    0.000    0.020    0.000 {built-in method builtins.len}
+   196000    0.047    0.000    0.047    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+        4    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _io.open}
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_io._IOBase' objects}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+      200    0.105    0.001    0.205    0.001 /Users/ganeshtiwari/projects/personal/advent-of-code/advent-of-code-2025/day-3/main.py:14(all_12_digit_combination)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:136(load_stats)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:117(init)
+
+
+################## solution found on github ##########################
+
+17383
+172601598658203
+         4414 function calls in 0.004 seconds
+
+   Random listing order was used
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+      400    0.001    0.000    0.002    0.000 /Users/ganeshtiwari/projects/personal/advent-of-code/advent-of-code-2025/day-3/solution.py:8(joltage)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:107(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+      801    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+     2800    0.002    0.000    0.002    0.000 {built-in method builtins.max}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.004    0.002 {built-in method builtins.sum}
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/cProfile.py:53(create_stats)
+      402    0.001    0.000    0.004    0.000 /Users/ganeshtiwari/projects/personal/advent-of-code/advent-of-code-2025/day-3/solution.py:19(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:136(load_stats)
+        1    0.000    0.000    0.000    0.000 /Users/ganeshtiwari/.pyenv/versions/3.14.0/lib/python3.14/pstats.py:117(init)
