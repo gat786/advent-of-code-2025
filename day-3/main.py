@@ -1,10 +1,14 @@
+from pathlib import Path
 from typing import List
 from cProfile import Profile
 from pstats import Stats
 
 def read_content(file_name: str = "input"):
   content = []
-  with open(file=file_name,mode="r", encoding="utf-8") as fp:
+  path = Path.from_uri(f"file://{__file__}").parent
+  file_path = path / file_name
+
+  with open(file=file_path,mode="r", encoding="utf-8") as fp:
     for line in fp:
       linecontent = line.strip()
       content.append(linecontent)
@@ -36,19 +40,19 @@ def all_twos_combinations(num_str: str) -> List:
       all_combinations.add(int(combination))
     previous_items.add(num)
 
-  return all_combinations
+  return list(all_combinations)
 
-def main():
-  content = read_content()
+def solution_1(content: List[str]) -> int:
+  ################## PART 1 Solution ###########################
+  maxs = []
+  for line in content:
+    combinations = all_twos_combinations(line)
+    maxs.append(max(combinations))
+  total = sum(maxs)
+  print(total)
+  return total
 
-  ################### PART 1 Solution ###########################
-  # maxs = []
-  # for line in content:
-  #   combinations = all_twos_combinations(line)
-  #   maxs.append(max(combinations))
-
-  # print(sum(maxs))
-
+def solution_2(content: List[str]) -> int:
   ################### PART 2 Solution ###########################
   maxs = []
   for line in content:
@@ -57,6 +61,12 @@ def main():
     maxs.append(max_value)
   total = sum(maxs)
   print(total)
+  return total
+
+def main():
+  content = read_content()
+  solution_1(content)
+  solution_2(content)
 
 
 if __name__ == "__main__":

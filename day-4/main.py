@@ -1,10 +1,14 @@
+from pathlib import Path
 from functools import total_ordering
 from dataclasses import dataclass
 from typing import List, Tuple
 
 def read_content(file_name: str = "input"):
   content = []
-  with open(file=file_name,mode="r", encoding="utf-8") as fp:
+  path = Path.from_uri(f"file://{__file__}").parent
+  file_path = path / file_name
+
+  with open(file=file_path,mode="r", encoding="utf-8") as fp:
     for line in fp:
       linecontent = line.strip()
       content.append(linecontent)
@@ -84,7 +88,7 @@ def part2_solution(matrix: List[List[Coordinate]]):
 
   print("Total forklifted count:", total_forklifted_count)
 
-if __name__ == "__main__":
+def main():
   content = read_content()
   matrix: List[List[Coordinate]] = []
   for line_index, line in enumerate(content):
@@ -96,3 +100,6 @@ if __name__ == "__main__":
 
   # part1_solution(matrix)
   part2_solution(matrix)
+
+if __name__ == "__main__":
+  main()

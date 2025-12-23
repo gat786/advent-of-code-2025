@@ -2,13 +2,17 @@
 # I was 1 short, because i was using python ranges and the ranges are end
 # exclusive meaning if i start a range from 1 - 10 it will only return [1,2,3,4,5,6,7,8,9]
 # and the last number of 1 of the ranges was something i needed to count
+from pathlib import Path
 from typing import List
 import math
 
 
 def read_content(file_name: str = "input"):
   content = []
-  with open(file=file_name,mode="r", encoding="utf-8") as fp:
+  path = Path.from_uri(f"file://{__file__}").parent
+  file_path = path / file_name
+
+  with open(file=file_path,mode="r", encoding="utf-8") as fp:
     for line in fp:
       linecontent = line.strip()
       content.append(linecontent)
@@ -46,7 +50,7 @@ def is_invalid_second(number: str, check_size: int):
   # mid = len(number) // 2
   # return any(number == number[:l] * (len(number) // l) for l in range(1, mid + 1))
 
-def main():
+def sol_1():
   # it only contains 1 line
   content = read_content()[0]
   all_ids = content.split(",")
@@ -65,7 +69,7 @@ def main():
   print(f"Total sum: {sum(invalid_id_list)}")
 
 
-def main_2():
+def sol_2():
   # it only contains 1 line
   content = read_content()[0]
   all_ids = content.split(",")
@@ -85,9 +89,13 @@ def main_2():
 
   print(f"Total sum: {sum(invalid_id_list)}")
 
+def main():
+  sol_1()
+  sol_2()
+
 if __name__ == "__main__":
-  # print("################ FIRST ##################")
-  # main()
+  print("################ FIRST ##################")
+  sol_1()
   print("################ SECOND ##################")
-  main_2()
+  sol_2()
   # print(get_divisors(12))

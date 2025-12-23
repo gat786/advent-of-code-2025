@@ -1,10 +1,14 @@
+from pathlib import Path
 import operator
 import json
 
 # this is the best answer i could come up with
 def read_content(file_name: str ="input.txt"):
   content = []
-  with open(file=file_name,mode="r", encoding="utf-8") as fp:
+  path = Path.from_uri(f"file://{__file__}").parent
+  file_path = path / file_name
+
+  with open(file=file_path,mode="r", encoding="utf-8") as fp:
     for line in fp:
       linecontent = line.strip()
       content.append(linecontent)
@@ -14,7 +18,7 @@ def read_content(file_name: str ="input.txt"):
 def turn_dial(
   starting_point: int,
   move: str
-) -> [int,int]:
+) -> tuple[int,int]:
   operation = operator.sub if move[0] == "L" else operator.add
   operate_by = int(move[1:], 10)
   operation_result = operation(starting_point, operate_by)
@@ -25,7 +29,7 @@ def turn_dial(
     operation_result = operation_result % 100
     # breakpoint()
 
-  return [operation_result, number_complete_turns]
+  return (operation_result, number_complete_turns)
 
 
 def main():
