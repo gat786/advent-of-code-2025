@@ -43,24 +43,24 @@ def solution_2() -> None:
   print(f"{'#' * 25 } Solution 2 {'#' * 25}")
   content = read_content()
   ranges: List[str] = []
-  ranges_end = False
 
   valid_ids = {}
 
   for line in content:
-    if line != "" and not ranges_end:
+    if line != "":
       ranges.append(line)
     elif line == "":
-      ranges_end = True
+      break;
 
 
   consolidated_ranges = []
   for range_index,range_str in enumerate(ranges):
     start, end = map(int, range_str.split("-"))
 
-    if len(consolidated_ranges) < 1:
+    if len(consolidated_ranges) == 0:
       consolidated_ranges.append((start, end))
       continue
+
     was_consolidated = False
     for c_range in consolidated_ranges:
       # check if it is overlapping
@@ -91,3 +91,6 @@ def main():
 
 if __name__ == "__main__":
   main()
+
+# My answer -> 355755429546761
+# The answer that is received from github -> 350513176552950
