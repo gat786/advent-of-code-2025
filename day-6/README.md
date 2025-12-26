@@ -34,3 +34,5 @@ Of course, the actual worksheet is much wider. You'll need to make sure to unrol
 Solve the problems on the math worksheet. What is the grand total found by adding together all of the answers to the individual problems?
 
 To begin, get your puzzle input.
+
+Your puzzle answer was 6209956042374.
