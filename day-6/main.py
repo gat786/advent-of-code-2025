@@ -3,10 +3,7 @@ from typing import List
 import math
 import operator
 
-def solution_1():
-  from pathlib import Path
-  cwd = Path.from_uri(f"file://{__file__}").parent
-  content = read.read_content(f"{cwd}/input")
+def solution_1(content: List[str]):
   list_of_numbers: List[List[int]] = [[] for _ in range(len(content[0].split()))]
   list_of_operators: List[List] = [[] for _ in range(len(content[0].split()))]
   list_of_answers: List[float] = [0.0 for _ in range(len(content[0].split()))]
@@ -24,17 +21,47 @@ def solution_1():
             list_of_operators[item_index].append(operator.mul)
             list_of_answers[item_index] = math.prod(list_of_numbers[item_index])
 
-  print(sum(list_of_answers))
+  sol1_sum = int(sum(list_of_answers))
+  print(f"Solution 1: {sol1_sum}")
+  return sol1_sum
 
+def solution_2(content: List[str]):
+  list_of_numbers: List[List[int]] = [[] for _ in range(len(content[0].split()))]
+  list_of_operators: List[List] = [[] for _ in range(len(content[0].split()))]
+  list_of_answers: List[float] = [0.0 for _ in range(len(content[0].split()))]
+  for line_index, line in enumerate(content):
+    items_in_line = line.split()
+    for item_index, item in enumerate(items_in_line):
+      if item.isdigit():
+        list_of_numbers[item_index].append(int(item))
+      else:
+        print(list_of_numbers[item_index])
+        biggest_number = max(list_of_numbers[item_index])
+        # no of digits in biggest number
+        no_of_digits = len(str(biggest_number))
+        # convert numbers to proper cephalopod format
+        altered_list = []
+        for i in range(no_of_digits):
+          new_number = (''.join(str(x).ljust(no_of_digits, ' ')[i] for x in list_of_numbers[item_index])).strip()
+          altered_list.append(int(new_number))
+        print(altered_list)
+        match item:
+          case '+':
+            sum_altered_list = math.fsum(altered_list)
+            list_of_answers[item_index] = sum_altered_list
+          case '*':
+            product_altered_list = math.prod(altered_list)
+            list_of_answers[item_index] = product_altered_list
 
-
-
-
-
-  # Your solution code here
+  sol2_sum = int(sum(list_of_answers))
+  print(f"Solution 2: {sol2_sum}")
+  return sol2_sum
 
 def main():
-  solution_1()
+  from pathlib import Path
+  cwd = Path.from_uri(f"file://{__file__}").parent
+  content = read.read_content(f"{cwd}/input")
+  solution_2(content=content)
 
 if __name__ == "__main__":
   main()
