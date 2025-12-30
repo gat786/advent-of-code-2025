@@ -60,3 +60,5 @@ Reading the problems right-to-left one column at a time, the problems are now qu
 Now, the grand total is 1058 + 3253600 + 625 + 8544 = 3263827.
 
 Solve the problems on the math worksheet again. What is the grand total found by adding together all of the answers to the individual problems?
+
+Your puzzle answer was 12608160008022.
