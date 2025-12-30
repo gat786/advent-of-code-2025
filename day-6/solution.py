@@ -14,5 +14,4 @@ nums1 = [[line[start:end] for line in nums_lines] for start, end in zip(starts, 
 nums2 = (map("".join, zip(*ns)) for ns in nums1)
 
 for nums in (nums1, nums2):
-  print(ops)
   print(sum(op(map(int, col)) for op, col in zip(ops, nums)))
