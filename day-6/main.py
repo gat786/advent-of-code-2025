@@ -58,6 +58,7 @@ def main():
   from pathlib import Path
   cwd = Path.from_uri(f"file://{__file__}").parent
   content = read.read_content(f"{cwd}/input")
+  solution_1(content=content)
   solution_2(content=content)
 
 if __name__ == "__main__":
