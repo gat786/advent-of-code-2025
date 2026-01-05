@@ -143,6 +143,9 @@ To begin, get your puzzle input.
 Your puzzle answer was 1499.
 
 The first half of this puzzle is complete! It provides one gold star: *
+
+---
+
 --- Part Two ---
 
 With your analysis of the manifold complete, you begin fixing the teleporter. However, as you open the side of the teleporter to replace the broken manifold, you are surprised to discover that it isn't a classical tachyon manifold - it's a quantum tachyon manifold.
@@ -155,6 +158,7 @@ To fix the manifold, what you really need to know is the number of timelines act
 
 In the above example, there are many timelines. For instance, there's the timeline where the particle always went left:
 
+```
 .......S.......
 .......|.......
 ......|^.......
@@ -171,9 +175,11 @@ In the above example, there are many timelines. For instance, there's the timeli
 .|.............
 |^.^.^.^.^...^.
 |..............
+```
 
 Or, there's the timeline where the particle alternated going left and right at each splitter:
 
+```
 .......S.......
 .......|.......
 ......|^.......
@@ -190,9 +196,11 @@ Or, there's the timeline where the particle alternated going left and right at e
 .......|.......
 .^.^.^|^.^...^.
 ......|........
+```
 
 Or, there's the timeline where the particle ends up at the same point as the alternating timeline, but takes a totally different path to get there:
 
+```
 .......S.......
 .......|.......
 ......|^.......
@@ -209,6 +217,7 @@ Or, there's the timeline where the particle ends up at the same point as the alt
 .....|.........
 .^.^.^|^.^...^.
 ......|........
+```
 
 In this example, in total, the particle ends up on 40 different timelines.
 
