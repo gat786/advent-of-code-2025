@@ -16,18 +16,21 @@ with open("input") as f:
 splitters = [col for l in ls for col, x in enumerate(l) if x == "^"]
 entering = [1] + [0] * (len(splitters) - 1)
 
-print(splitters)
-print(entering)
-
 for i, si in enumerate(splitters):
-    for j, sj in enumerate(splitters[:i][::-1]):
+    prev_splitters = splitters[:i]
+    for j, sj in enumerate(prev_splitters[::-1]): # basically prev splitters in rev
+        # if one of the previous splitters was just above current one, then
+        # we can stop looking further up that column, because that splitter will
+        # block any beams from higher up
         if si == sj:
             break
+        # if one of the previous splitters was just to the left/right of current one,
+        # then we can stop looking further left/right, because that splitter will
+        # block any beams from further left/right
         if abs(si - sj) == 1:
             entering[i] += entering[i - j - 1]
 
 # Part 1
 print(sum(b > 0 for b in entering))
 
-# Part 2
 print(sum(entering) + 1)
